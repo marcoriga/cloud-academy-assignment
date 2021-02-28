@@ -1,0 +1,16 @@
+.Button {
+  padding: calc(var(--spacer) / 2) var(--spacer);
+  background-color: var(--primary);
+  border: none;
+  color: var(--light);
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease-in;
+}
+
+.Button:hover,
+.Button:focus {
+  background-color: var(--primary-darken);
+}

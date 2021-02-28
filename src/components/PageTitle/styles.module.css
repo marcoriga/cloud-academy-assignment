@@ -1,0 +1,6 @@
+.PageTitle {
+  font-size: var(--page-title-size);
+  text-align: center;
+  font-weight: bold;
+  margin: calc(var(--spacer) * 2) 0;
+}

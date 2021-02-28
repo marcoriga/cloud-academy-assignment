@@ -1,0 +1,36 @@
+.Character {
+  width: 50%;
+  padding: 0 calc(var(--spacer) / 2);
+  margin-bottom: var(--spacer);
+}
+
+.Content {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--gray);
+}
+
+.Thumb {
+  overflow: hidden;
+  position: relative;
+}
+
+.ThumbInner {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  background-color: var(--gray-lighten);
+}
+
+.Thumb img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.Body {
+  padding: var(--spacer);
+}

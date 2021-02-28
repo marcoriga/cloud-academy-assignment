@@ -1,0 +1,9 @@
+.Pagination {
+  display: flex;
+  padding: 0 calc(var(--spacer) / 2) var(--spacer);
+  justify-content: space-between;
+}
+
+.Next {
+  justify-self: flex-end;
+}
