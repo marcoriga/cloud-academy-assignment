@@ -6,19 +6,15 @@
   --primary: #ff9800;
   --primary-darken: #cc7a00;
   --container-width: 680px;
-  --page-title-size: 1rem;
+  --page-title-size: 1.4rem;
   --spacer: 24px;
+  --card-size: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   :root {
     --page-title-size: 2rem;
-  }
-}
-
-@media screen and (min-width: 1366px) {
-  :root {
-    --page-title-size: 3rem;
+    --card-size: 50%;
   }
 }
 

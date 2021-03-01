@@ -1,5 +1,5 @@
 .Character {
-  width: 50%;
+  width: var(--card-size);
   padding: 0 calc(var(--spacer) / 2);
   margin-bottom: var(--spacer);
 }

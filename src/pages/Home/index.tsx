@@ -1,53 +1,55 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useReducer } from "react";
+
 import httpClient from "../../client";
+
 import Character from "../../components/Character";
 import Characters from "../../components/Characters";
 import Container from "../../components/Container";
+import ErrorWarning from "../../components/ErrorWarning";
 import PageTitle from "../../components/PageTitle";
 import Pagination from "../../components/Pagination";
-import { ICharacter } from "../../defs/character";
+import Spinner from "../../components/Spinner";
+
+import reducer, { initialState } from "../../reducers";
+import { CharactersActionType } from "../../reducers/actions";
 
 const Home: FC = () => {
-  const [characters, setCharacters] = useState<ICharacter[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [pages, setPages] = useState<number>(1);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [characters, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    fetchCharacters(currentPage);
+    fetchCharacters(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchCharacters = (page: number) => {
-    // If there are results, jumping to page start
-    // So user can see the list from the beginning
-    if (characters?.length) {
-      window.scrollTo(0, 0);
-    }
+    dispatch({ type: CharactersActionType.Load, payload: page });
 
-    httpClient.getCharacters(page).then((data) => {
-      setCharacters(data.results);
-      setLoading(false);
-      setCurrentPage(page);
-      setPages(data.info.pages);
-    });
+    httpClient
+      .getCharacters(page)
+      .then((data) =>
+        dispatch({ type: CharactersActionType.Success, payload: data })
+      )
+      .catch(() => dispatch({ type: CharactersActionType.Error }));
   };
 
   return (
     <Container>
       <PageTitle title="Rick and Morty Characters" />
-      {!loading && (
+      {characters.error && <ErrorWarning />}
+      {characters.loading ? (
+        <Spinner />
+      ) : (
         <>
           <Characters>
-            {characters?.map((item) => (
+            {characters.data?.map((item) => (
               <Character key={item.id} data={item} />
             ))}
           </Characters>
 
           <Pagination
-            pages={pages}
-            currentPage={currentPage}
+            pages={characters.pages}
             onNavigation={fetchCharacters}
+            currentPage={characters.currentPage}
           />
         </>
       )}
