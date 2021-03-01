@@ -1,23 +1,48 @@
 import { FC } from "react";
+import Button from "../Button";
+import CharacterThumb from "../CharacterThumb";
+import Paired from "../Paired";
 import styles from "./styles.module.css";
-import { ICharacter } from "../../defs/character";
+import { ICharacter } from "../../defs/types";
+import CharacterInformation from "../CharacterInformation";
 
 interface ICharacterProps {
   data: ICharacter;
+  onShowEpisodes: (ids: number[]) => void;
 }
 
-const Character: FC<ICharacterProps> = ({ data }) => {
+const Character: FC<ICharacterProps> = ({ data, onShowEpisodes }) => {
+  const showEpisodes = () => {
+    // Retrieve the ID of each episode
+    // The ID is the last parameter in the url
+    const ids = data.episode.map((url) =>
+      parseInt(url.split("/").slice(-1)[0])
+    );
+
+    onShowEpisodes(ids);
+  };
+
   return (
     <div className={styles.Character}>
       <div className={styles.Content}>
-        <div className={styles.Thumb}>
-          <div className={styles.ThumbInner}>
-            <img src={data.image} alt={data.name} loading="lazy" />
-          </div>
-        </div>
+        <CharacterThumb src={data.image} alt={data.name} />
 
         <div className={styles.Body}>
-          <h3>{data.name}</h3>
+          <CharacterInformation
+            name={data.name}
+            gender={data.gender}
+            status={data.status}
+            species={data.species}
+          />
+
+          <Paired label="Last known location" value={data.location.name} />
+          <Paired label="Origin location" value={data.origin.name} />
+
+          {data.episode.length && (
+            <Button theme="link" onClick={showEpisodes}>
+              Show episodes
+            </Button>
+          )}
         </div>
       </div>
     </div>

@@ -1,16 +1,32 @@
 .Button {
-  padding: calc(var(--spacer) / 2) var(--spacer);
-  background-color: var(--primary);
   border: none;
-  color: var(--light);
-  border-radius: 2px;
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
-  transition: background-color 0.3s ease-in;
+  background-color: transparent;
 }
 
-.Button:hover,
-.Button:focus {
+.Default {
+  color: var(--light);
+  border-radius: 2px;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease-in;
+  padding: calc(var(--spacer) / 2) var(--spacer);
+}
+
+.Default:hover,
+.Default:focus {
   background-color: var(--primary-darken);
+}
+
+.Link {
+  color: var(--primary);
+  transition: color 0.3s ease-in;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.Link:hover,
+.Link:focus {
+  color: var(--primary-darken);
 }

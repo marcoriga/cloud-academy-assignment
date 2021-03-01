@@ -2,14 +2,20 @@ import { FC } from "react";
 import styles from "./styles.module.css";
 
 interface IButtonProps {
-  loading?: boolean;
+  theme?: "default" | "link";
   onClick: () => void;
 }
 
-const Button: FC<IButtonProps> = (props) => {
+const Button: FC<IButtonProps> = ({ theme = "default", onClick, children }) => {
+  const layoutClass = theme === "default" ? styles.Default : styles.Link;
+
   return (
-    <button className={styles.Button} type="button" onClick={props.onClick}>
-      {props.children}
+    <button
+      type="button"
+      onClick={onClick}
+      className={`${styles.Button} ${layoutClass}`}
+    >
+      {children}
     </button>
   );
 };

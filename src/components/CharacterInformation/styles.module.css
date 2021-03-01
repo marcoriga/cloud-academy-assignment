@@ -1,0 +1,23 @@
+.Info {
+  margin-bottom: var(--spacer);
+}
+
+.Info h3 {
+  margin: 0 0 calc(var(--spacer) / 3);
+}
+
+.Data {
+  display: flex;
+  align-items: center;
+}
+
+.Data>span {
+  margin-right: 8px;
+  position: relative;
+  display: block;
+}
+
+.Data>span:not(:last-of-type):after {
+  content: " - ";
+  margin-left: 4px;
+}

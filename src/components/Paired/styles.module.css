@@ -1,0 +1,14 @@
+.Wrapper {
+  display: block;
+  margin-bottom: var(--spacer);
+}
+
+.Wrapper label {
+  width: 100%;
+  display: block;
+  opacity: 0.5;
+  color: var(--light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: calc(var(--spacer) / 4);
+}

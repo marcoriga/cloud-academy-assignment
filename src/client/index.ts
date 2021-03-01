@@ -1,5 +1,4 @@
-import { IPagination } from "../defs/pagination";
-import { ICharacter } from "../defs/character";
+import { IPagination, ICharacter } from "../defs/types";
 
 class HttpClient {
   url = "https://rickandmortyapi.com/api";

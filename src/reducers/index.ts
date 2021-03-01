@@ -1,6 +1,5 @@
 import { CharactersActionType } from "./actions";
-import { ICharacter } from "../defs/character";
-import { IPagination } from "../defs/pagination";
+import { ICharacter, IPagination } from "../defs/types";
 
 type CharactersActions =
   | { type: CharactersActionType.Load; payload: number }

@@ -32,6 +32,10 @@ const Home: FC = () => {
       .catch(() => dispatch({ type: CharactersActionType.Error }));
   };
 
+  const loadEpisodesNames = (episodes: number[]) => {
+    console.log(episodes);
+  };
+
   return (
     <Container>
       <PageTitle title="Rick and Morty Characters" />
@@ -42,7 +46,11 @@ const Home: FC = () => {
         <>
           <Characters>
             {characters.data?.map((item) => (
-              <Character key={item.id} data={item} />
+              <Character
+                onShowEpisodes={loadEpisodesNames}
+                key={item.id}
+                data={item}
+              />
             ))}
           </Characters>
 
