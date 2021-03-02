@@ -18,7 +18,7 @@ class HttpClient {
    *
    * @param ids - ids of the requested episode(s)
    */
-  async getEpisodes(ids: number | number[]): Promise<IEpisode[]> {
+  async getEpisodes(ids: number | number[]): Promise<IEpisode | IEpisode[]> {
     const response = await fetch(`${this.url}/episode/${ids}`);
     return response.json();
   }

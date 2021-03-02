@@ -1,11 +1,11 @@
 import { CharacterActionType } from "./actions";
-import { IEpisode, ILocation } from "../defs/types";
+import { CharacterModalData, IEpisode, ILocation } from "../defs/types";
 
 type CharacterActions =
   | { type: CharacterActionType.Load }
   | {
       type: CharacterActionType.Success;
-      payload: [ILocation, ILocation, IEpisode[]];
+      payload: CharacterModalData;
     }
   | { type: CharacterActionType.Error }
   | { type: CharacterActionType.Reset };
@@ -42,9 +42,7 @@ export default function reducer(
       return {
         ...state,
         loading: false,
-        location: action.payload[0],
-        origin: action.payload[1],
-        episodes: action.payload[2],
+        ...action.payload,
       };
 
     case CharacterActionType.Error:

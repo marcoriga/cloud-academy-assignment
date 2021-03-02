@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import styles from "./styles.module.css";
 import { IEpisode } from "../../defs/types";
 

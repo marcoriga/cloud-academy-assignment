@@ -2,6 +2,14 @@ export declare type Gender = "Female" | "Male" | "Genderless" | "unknown";
 
 export declare type Status = "Alive" | "Dead" | "unknown";
 
+export declare type CharacterModalData = {
+  location?: ILocation;
+  origin?: ILocation;
+  episodes?: IEpisode[];
+};
+
+export declare type CharacterModalPromise = Promise<CharacterModalData>[];
+
 /**
  * Episode type
  */
