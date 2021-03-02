@@ -1,6 +1,6 @@
 # Cloud Academy Assignment
 
-Curated by **Marco Rigamonti**
+Curated by **Marco Rigamonti**.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
