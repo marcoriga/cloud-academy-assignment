@@ -1,0 +1,10 @@
+.Wrapper h5 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: calc(var(--spacer) / 3);
+  font-size: 1rem;
+}
+
+.Lists {
+  line-height: 1.6;
+}

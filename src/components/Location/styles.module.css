@@ -1,0 +1,16 @@
+.Wrapper {
+  margin-bottom: var(--spacer);
+}
+
+.Wrapper h5 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: calc(var(--spacer) / 3);
+  font-size: 1rem;
+}
+
+.Item {
+  display: flex;
+  padding: calc(var(--spacer) / 2) 0;
+  border-bottom: 1px solid rgba(var(--light-rgb), 0.08);
+}

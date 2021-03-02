@@ -1,0 +1,69 @@
+.Modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark);
+  opacity: 0.45;
+}
+
+.Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--spacer);
+  max-width: var(--container-width);
+  width: 100%;
+}
+
+.Inner {
+  border-radius: var(--border-radius);
+  background-color: var(--gray);
+  box-shadow: 0px 20px 30px rgba(var(--darken-rgb), 0.2);
+  max-height: calc(100vh - (var(--spacer) * 2));
+  overflow-y: auto;
+}
+
+.Header {
+  padding: calc(var(--spacer) / 2) var(--spacer);
+  border-bottom: 1px solid rgba(var(--light-rgb), 0.16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.Dismiss {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--gray-lighten);
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: calc(var(--spacer) / 2);
+  transition: color 0.3s ease-in;
+}
+
+.Dismiss:hover,
+.Dismiss:focus {
+  color: var(--light);
+}
+
+.Body {
+  padding: var(--spacer);
+}

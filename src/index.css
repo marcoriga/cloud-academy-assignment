@@ -1,14 +1,19 @@
 :root {
+  --darken: #000000;
+  --darken-rgb: 0, 0, 0;
   --dark: #24292E;
+  --dark-rgb: 60, 62, 68;
   --gray: #3c3e44;
   --gray-lighten: #60636d;
   --light: #ffffff;
+  --light-rgb: 255, 255, 255;
   --primary: #ff9800;
   --primary-darken: #cc7a00;
   --container-width: 680px;
   --page-title-size: 1.4rem;
   --spacer: 24px;
   --card-size: 100%;
+  --border-radius: 4px;
 }
 
 @media screen and (min-width: 768px) {
@@ -24,8 +29,13 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
+  font-size: 14px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -33,6 +43,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--dark);
   color: var(--light);
+}
+
+body.is-modal-open {
+  overflow-y: hidden;
 }
 
 img {

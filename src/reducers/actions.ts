@@ -3,3 +3,10 @@ export enum CharactersActionType {
   Success = "SUCCESS",
   Error = "Error",
 }
+
+export enum CharacterActionType {
+  Load = "LOAD",
+  Success = "SUCCESS",
+  Error = "ERROR",
+  Reset = "RESET",
+}

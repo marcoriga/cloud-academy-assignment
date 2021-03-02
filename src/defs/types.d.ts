@@ -3,6 +3,32 @@ export declare type Gender = "Female" | "Male" | "Genderless" | "unknown";
 export declare type Status = "Alive" | "Dead" | "unknown";
 
 /**
+ * Episode type
+ */
+export interface IEpisode {
+  air_date: string;
+  characters: string[];
+  created: string;
+  episode: string;
+  id: number;
+  name: string;
+  url: string;
+}
+
+/**
+ * Location type
+ */
+export interface ILocation {
+  created: string;
+  dimension: string;
+  id: number;
+  name: string;
+  residents: string[];
+  type: string;
+  url: string;
+}
+
+/**
  * Character type
  */
 export interface ICharacter {

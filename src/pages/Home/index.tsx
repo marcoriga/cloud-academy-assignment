@@ -2,15 +2,15 @@ import { FC, useEffect, useReducer } from "react";
 
 import httpClient from "../../client";
 
-import Character from "../../components/Character";
 import Characters from "../../components/Characters";
 import Container from "../../components/Container";
 import ErrorWarning from "../../components/ErrorWarning";
 import PageTitle from "../../components/PageTitle";
 import Pagination from "../../components/Pagination";
 import Spinner from "../../components/Spinner";
+import Character from "../../containers/Character";
 
-import reducer, { initialState } from "../../reducers";
+import reducer, { initialState } from "../../reducers/characters";
 import { CharactersActionType } from "../../reducers/actions";
 
 const Home: FC = () => {
@@ -32,10 +32,6 @@ const Home: FC = () => {
       .catch(() => dispatch({ type: CharactersActionType.Error }));
   };
 
-  const loadEpisodesNames = (episodes: number[]) => {
-    console.log(episodes);
-  };
-
   return (
     <Container>
       <PageTitle title="Rick and Morty Characters" />
@@ -46,11 +42,7 @@ const Home: FC = () => {
         <>
           <Characters>
             {characters.data?.map((item) => (
-              <Character
-                onShowEpisodes={loadEpisodesNames}
-                key={item.id}
-                data={item}
-              />
+              <Character key={item.id} data={item} />
             ))}
           </Characters>
 

@@ -4,11 +4,12 @@
   font-weight: bold;
   display: inline-block;
   background-color: transparent;
+  font-size: 0.8rem;
 }
 
 .Default {
   color: var(--light);
-  border-radius: 2px;
+  border-radius: var(--border-radius);
   background-color: var(--primary);
   transition: background-color 0.3s ease-in;
   padding: calc(var(--spacer) / 2) var(--spacer);

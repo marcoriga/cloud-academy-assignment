@@ -9,15 +9,16 @@
 .Data {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .Data>span {
-  margin-right: 8px;
+  margin-right: 4px;
   position: relative;
   display: block;
 }
 
 .Data>span:not(:last-of-type):after {
-  content: " - ";
+  content: "-";
   margin-left: 4px;
 }
