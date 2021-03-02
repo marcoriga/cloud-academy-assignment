@@ -100,7 +100,7 @@ const Character: FC<ICharacterProps> = ({ data }) => {
           />
 
           <Button theme="link" onClick={showModal}>
-            Show details
+            View details
           </Button>
 
           {modalIsVisible && (
