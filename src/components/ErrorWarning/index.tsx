@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./styles.module.css";
 
 const ErrorWarning: FC = () => {
-  return <p className={styles.Error}>Spiacenti si è verificato un errore.</p>;
+  return <p className={styles.Error}>Sorry, an error has occurred.</p>;
 };
 
 export default ErrorWarning;
